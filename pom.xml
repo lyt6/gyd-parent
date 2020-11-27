@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.glodon.gyd</groupId>
+    <artifactId>gyd-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>gyd-common-codegen</module>
+        <module>gyd-common-db</module>
+        <module>gyd-common-util</module>
+    </modules>
+
+    <properties>
+        <gyd-common-db.version>1.0.0-SNAPSHOT</gyd-common-db.version>
+        <gyd-common-util.version>1.0.0-SNAPSHOT</gyd-common-util.version>
+
+        <!-- global config -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <!-- global config -->
+
+        <!-- third party dependency -->
+        <mybatisplus.version>3.0.6</mybatisplus.version>
+        <fastjson.version>1.2.47</fastjson.version>
+        <hikaricp.version>3.2.0</hikaricp.version>
+        <jmockit.version>1.38</jmockit.version>
+        <sonar.version>3.8</sonar.version>
+        <spring.start.quartz>1.0.4</spring.start.quartz>
+        <commons.lang3>3.7</commons.lang3>
+        <commons.collections4>4.1</commons.collections4>
+        <commons.beanutils>1.9.3</commons.beanutils>
+        <commons.codec>1.11</commons.codec>
+        <lombok.version>1.18.0</lombok.version>
+        <modelmapper.version>2.3.0</modelmapper.version>
+        <!-- third party dependency -->
+
+        <perf4j.version>0.9.16</perf4j.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.glodon.gyd</groupId>
+                <artifactId>gyd-common-db</artifactId>
+                <version>${gyd-common-db.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.glodon.gyd</groupId>
+                <artifactId>gyd-common-util</artifactId>
+                <version>${gyd-common-util.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.perf4j</groupId>
+                <artifactId>perf4j</artifactId>
+                <version>${perf4j.version}</version>
+            </dependency>
+
+            <!-- Commons -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons.collections4}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons.beanutils}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons.codec}</version>
+            </dependency>
+            <!-- Commons -->
+
+            <!-- Logging -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-to-slf4j</artifactId>
+                <version>2.7</version>
+            </dependency>
+            <dependency>
+                <artifactId>log-util</artifactId>
+                <groupId>com.puhui.log</groupId>
+                <version>${puhui-log.version}</version>
+            </dependency>
+            <!-- Logging -->
+
+            <!-- Json -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- Json -->
+
+            <!-- mybatis plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatisplus.version}</version>
+            </dependency>
+            <!-- mybatis plus -->
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Edgware.SR3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>3.10.0</version>
+            </dependency>
+            <dependency>
+                <groupId>kr.pe.kwonnam.freemarker</groupId>
+                <artifactId>freemarker-template-inheritance</artifactId>
+                <version>0.4.RELEASE</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.modelmapper</groupId>
+                <artifactId>modelmapper</artifactId>
+                <version>${modelmapper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.modelmapper.extensions</groupId>
+                <artifactId>modelmapper-spring</artifactId>
+                <version>${modelmapper.version}</version>
+            </dependency>
+
+            <!--swagger-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>2.7.0</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>2.7.0</version>
+                <scope>compile</scope>
+            </dependency>
+            <!--swagger-->
+
+            <dependency>
+                <groupId>com.googlecode.aviator</groupId>
+                <artifactId>aviator</artifactId>
+                <version>4.1.2</version>
+            </dependency>
+
+            <!-- hutool工具包 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.4.7</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- Test -->
+        <dependency>
+            <groupId>org.jmockit</groupId>
+            <artifactId>jmockit</artifactId>
+            <version>${jmockit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <!-- Test -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
